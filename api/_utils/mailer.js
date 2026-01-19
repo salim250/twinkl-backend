@@ -1,7 +1,5 @@
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
-
-dotenv.config();
+// api/mail/_utils/mailer.js
+import nodemailer from "nodemailer";
 
 export const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
@@ -9,6 +7,6 @@ export const transporter = nodemailer.createTransport({
   secure: Number(process.env.MAIL_PORT) === 465,
   auth: {
     user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
+    pass: process.env.MAIL_PASS
+  }
 });
